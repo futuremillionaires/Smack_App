@@ -181,7 +181,7 @@
         <scene sceneID="CJH-RF-S64">
             <objects>
                 <viewController id="PGA-I6-VFS" customClass="LoginVC" customModule="Smack" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d7S-Of-2hO">
+                    <view key="view" contentMode="scaleToFill" id="d7S-Of-2hO" customClass="RoundedCorner" customModule="Smack" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -211,7 +211,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaU-rJ-m1T">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaU-rJ-m1T" customClass="RoundedCorner" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.666666666666657" y="340" width="249.99999999999997" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -222,6 +222,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-Q9-Oc8">
                                 <rect key="frame" x="86" y="390" width="203" height="26"/>
@@ -312,7 +317,7 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-gX-ut2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-gX-ut2" customClass="RoundedCorner" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="63" y="713" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -323,11 +328,15 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccntPressed:" destination="R6Y-gW-Rw7" eventType="touchUpInside" id="1f2-E5-dLc"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-5k-fbV">
-                                <rect key="frame" x="16" y="212" width="250" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBU-pI-a1a">
                                 <rect key="frame" x="137.66666666666666" y="377" width="100" height="130"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -340,6 +349,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="PGA-I6-VFS" eventType="touchUpInside" id="WR9-jb-BCY"/>
+                                    <action selector="pickAvatarPressed:" destination="R6Y-gW-Rw7" eventType="touchUpInside" id="7YL-bi-5eT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66j-jm-eGb">
@@ -423,6 +433,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="PGA-I6-VFS" eventType="touchUpInside" id="pZc-0k-ulC"/>
+                                    <action selector="pickBGColorPressed:" destination="R6Y-gW-Rw7" eventType="touchUpInside" id="OHo-Wf-DMX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -447,6 +458,10 @@
                         <viewLayoutGuide key="safeArea" id="s3P-tc-cug"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="icb-5o-Wib" id="fIc-8H-zLI"/>
+                        <outlet property="passTxt" destination="tY3-6G-vE9" id="Uiu-c6-O6e"/>
+                        <outlet property="userImage" destination="WR5-qU-Jvn" id="bBJ-ls-X5Z"/>
+                        <outlet property="userName" destination="D8K-6b-xNF" id="Ogc-QX-v2O"/>
                         <segue destination="Eja-fE-ekf" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="b2a-0v-Mjt"/>
                     </connections>
                 </viewController>

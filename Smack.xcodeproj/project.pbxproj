@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8208AE28E898E059996BD1F5 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE3F87883FD259CED276FC0 /* Pods_Smack.framework */; };
+		E904D6671FFB36350024B47B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904D6661FFB36350024B47B /* UserDataService.swift */; };
 		E912B4411FF4CA4700127D7A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912B4401FF4CA4700127D7A /* GradientView.swift */; };
 		E9243BCD1FFA0DBE00CDBF02 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9243BCC1FFA0DBE00CDBF02 /* AuthServices.swift */; };
 		E9243BCF1FFA2ED200CDBF02 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9243BCE1FFA2ED200CDBF02 /* RoundedCorner.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		9AE3F87883FD259CED276FC0 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E2B5CD8E52AB30607CC123F /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
+		E904D6661FFB36350024B47B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		E912B4401FF4CA4700127D7A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E9243BCC1FFA0DBE00CDBF02 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		E9243BCE1FFA2ED200CDBF02 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E9243BCC1FFA0DBE00CDBF02 /* AuthServices.swift */,
+				E904D6661FFB36350024B47B /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				E96DAF681FF4A5E600D9AD8D /* ChatVC.swift in Sources */,
 				E9FFFFE01FF38BE300F4DCA9 /* AppDelegate.swift in Sources */,
 				E9243BCF1FFA2ED200CDBF02 /* RoundedCorner.swift in Sources */,
+				E904D6671FFB36350024B47B /* UserDataService.swift in Sources */,
 				E9E46AD01FF6229B000F9828 /* CreateAccountVC.swift in Sources */,
 				E9E46ACE1FF61ECC000F9828 /* LoginVC.swift in Sources */,
 				E912B4411FF4CA4700127D7A /* GradientView.swift in Sources */,

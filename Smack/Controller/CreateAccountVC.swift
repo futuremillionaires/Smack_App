@@ -19,8 +19,12 @@ class CreateAccountVC: UIViewController {
     var avatarColor = "[0.5,0.5,0.5,1]"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            userImage.image = UIImage(named:UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
     }
     
     @IBAction func pickBGColorPressed(_ sender: Any) {
@@ -38,7 +42,7 @@ class CreateAccountVC: UIViewController {
                     if success {
                         AuthServices.instance.createUser(name: name, email: email, avatarColor: self.avatarColor, avatarName: self.avatarName, completion: { (success) in
                             if success {
-                             print(UserDataService.instance.name,UserDataService.instance.avatarName)
+                                print(UserDataService.instance.name,UserDataService.instance.avatarName)
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                             }
                         })
@@ -47,7 +51,6 @@ class CreateAccountVC: UIViewController {
                 
             }
         }
-        
     }
     @IBAction func closePressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)

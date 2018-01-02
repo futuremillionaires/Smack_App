@@ -26,6 +26,7 @@ class CreateAccountVC: UIViewController {
     @IBAction func pickBGColorPressed(_ sender: Any) {
     }
     @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     @IBAction func createAccntPressed(_ sender: Any) {
         guard let name = userNameTxt.text,userNameTxt.text != "" else{return}

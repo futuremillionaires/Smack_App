@@ -461,7 +461,7 @@
                         <outlet property="emailTxt" destination="icb-5o-Wib" id="fIc-8H-zLI"/>
                         <outlet property="passTxt" destination="tY3-6G-vE9" id="Uiu-c6-O6e"/>
                         <outlet property="userImage" destination="WR5-qU-Jvn" id="bBJ-ls-X5Z"/>
-                        <outlet property="userName" destination="D8K-6b-xNF" id="Ogc-QX-v2O"/>
+                        <outlet property="userNameTxt" destination="D8K-6b-xNF" id="8p5-sP-C7R"/>
                         <segue destination="Eja-fE-ekf" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="b2a-0v-Mjt"/>
                     </connections>
                 </viewController>

@@ -156,7 +156,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginBtnpressed:" destination="yjG-dX-X75" eventType="touchUpInside" id="CQU-4f-0RR"/>
+                                    <action selector="loginBtnPressed:" destination="yjG-dX-X75" eventType="touchUpInside" id="Tvw-SF-jN8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -170,6 +170,8 @@
                         <viewLayoutGuide key="safeArea" id="HYM-MJ-cLM"/>
                     </view>
                     <connections>
+                        <outlet property="loginBtn" destination="asv-lK-Y7b" id="Ebc-DD-mTK"/>
+                        <outlet property="userImg" destination="WdT-Ib-ocN" id="N0y-dR-KKg"/>
                         <segue destination="PGA-I6-VFS" kind="show" identifier="toLogin" id="D09-FY-rkO"/>
                     </connections>
                 </viewController>

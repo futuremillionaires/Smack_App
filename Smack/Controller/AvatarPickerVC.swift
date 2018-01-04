@@ -53,7 +53,6 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         }
     self.dismiss(animated: true, completion: nil)
     }
-
     @IBAction func segmentControlChanged(_ sender: Any) {
         if segmentControl.selectedSegmentIndex == 0 {
             avatarType = .dark

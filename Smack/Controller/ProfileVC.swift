@@ -18,8 +18,6 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         setUpView()
     }
-  
-    
     @IBAction func closeModalPressed(_ sender: Any) {
        self.dismiss(animated: true, completion: nil)
         
@@ -28,7 +26,6 @@ class ProfileVC: UIViewController {
         UserDataService.instance.logoutUser()
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         dismiss(animated: true, completion: nil)
-        
     }
     func setUpView() {
         profileImg.image = UIImage(named:UserDataService.instance.avatarName)
@@ -41,6 +38,4 @@ class ProfileVC: UIViewController {
     @objc func closeTap(_ recognizer:UITapGestureRecognizer) {
     dismiss(animated: true, completion: nil)
     }
-    
-        
 }

@@ -232,6 +232,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="PGA-I6-VFS" eventType="touchUpInside" id="glq-C5-Vsx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-Q9-Oc8">
                                 <rect key="frame" x="86" y="390" width="203" height="26"/>
@@ -286,6 +289,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ji6-Ch-cpV">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -298,11 +305,16 @@
                             <constraint firstItem="8Cd-Q9-Oc8" firstAttribute="top" secondItem="DaU-rJ-m1T" secondAttribute="bottom" id="eTF-Na-s4l"/>
                             <constraint firstItem="9Ki-xp-igJ" firstAttribute="trailing" secondItem="68X-FH-Be6" secondAttribute="trailing" constant="16" id="fiY-kA-WTh"/>
                             <constraint firstItem="DaU-rJ-m1T" firstAttribute="top" secondItem="TRI-wo-QwW" secondAttribute="bottom" constant="40" id="gBg-50-tO4"/>
+                            <constraint firstItem="ji6-Ch-cpV" firstAttribute="centerY" secondItem="d7S-Of-2hO" secondAttribute="centerY" constant="-100" id="o31-Vf-IrV"/>
+                            <constraint firstItem="ji6-Ch-cpV" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="shG-89-d0X"/>
                             <constraint firstItem="TRI-wo-QwW" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="zFg-U7-CUe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ki-xp-igJ"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="1kb-6I-Vh1" id="ptx-1G-gcT"/>
+                        <outlet property="spinner" destination="ji6-Ch-cpV" id="dFb-uq-etB"/>
+                        <outlet property="userNameTxt" destination="P8v-Iw-3IV" id="Opz-kh-KeM"/>
                         <segue destination="R6Y-gW-Rw7" kind="show" identifier="toCreateAccount" id="V49-J9-HDn"/>
                     </connections>
                 </viewController>
@@ -445,7 +457,7 @@
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OuO-uh-0i6">
                                 <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

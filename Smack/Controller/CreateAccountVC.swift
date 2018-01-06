@@ -39,6 +39,7 @@ class CreateAccountVC: UIViewController {
         let g = CGFloat(arc4random_uniform(255)) / 255
         let b = CGFloat(arc4random_uniform(255)) / 255
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        avatarColor = "[\(r),\(g),\(b),1]"
         UIView.animate(withDuration: 0.2) {
         self.userImage.backgroundColor = self.bgColor
         }
@@ -56,7 +57,7 @@ class CreateAccountVC: UIViewController {
             if success {
                 AuthServices.instance.userLogin(email: email, password: pass, completion: { (success) in
                     if success {
-                        AuthServices.instance.createUser(name: name, email: email, avatarColor: self.avatarColor, avatarName: self.avatarName, completion: { (success) in
+                        AuthServices.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             if success {
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()

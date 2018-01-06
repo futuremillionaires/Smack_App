@@ -170,6 +170,8 @@
                         <viewLayoutGuide key="safeArea" id="HYM-MJ-cLM"/>
                     </view>
                     <connections>
+                        <outlet property="loginBtn" destination="asv-lK-Y7b" id="ekl-Bv-Wfx"/>
+                        <outlet property="profileImg" destination="WdT-Ib-ocN" id="V2f-Jk-EdD"/>
                         <segue destination="PGA-I6-VFS" kind="show" identifier="toLogin" id="D09-FY-rkO"/>
                     </connections>
                 </viewController>
@@ -230,6 +232,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="PGA-I6-VFS" eventType="touchUpInside" id="iSB-c8-Xty"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-Q9-Oc8">
                                 <rect key="frame" x="86" y="390" width="203" height="26"/>
@@ -284,6 +289,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BMX-wc-m9D">
+                                <rect key="frame" x="169" y="297.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -294,13 +303,18 @@
                             <constraint firstItem="DaU-rJ-m1T" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="Yri-sX-Sed"/>
                             <constraint firstItem="vy9-WC-LnH" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="Z3P-9C-q3i"/>
                             <constraint firstItem="8Cd-Q9-Oc8" firstAttribute="top" secondItem="DaU-rJ-m1T" secondAttribute="bottom" id="eTF-Na-s4l"/>
+                            <constraint firstItem="BMX-wc-m9D" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="fb3-SY-ZmH"/>
                             <constraint firstItem="9Ki-xp-igJ" firstAttribute="trailing" secondItem="68X-FH-Be6" secondAttribute="trailing" constant="16" id="fiY-kA-WTh"/>
                             <constraint firstItem="DaU-rJ-m1T" firstAttribute="top" secondItem="TRI-wo-QwW" secondAttribute="bottom" constant="40" id="gBg-50-tO4"/>
+                            <constraint firstItem="BMX-wc-m9D" firstAttribute="centerY" secondItem="d7S-Of-2hO" secondAttribute="centerY" constant="-90" id="iAG-38-MpC"/>
                             <constraint firstItem="TRI-wo-QwW" firstAttribute="centerX" secondItem="d7S-Of-2hO" secondAttribute="centerX" id="zFg-U7-CUe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ki-xp-igJ"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="1kb-6I-Vh1" id="egY-VK-8su"/>
+                        <outlet property="spinner" destination="BMX-wc-m9D" id="2B1-3A-Wpf"/>
+                        <outlet property="userNameTxt" destination="P8v-Iw-3IV" id="RGs-MK-A0L"/>
                         <segue destination="R6Y-gW-Rw7" kind="show" identifier="toCreateAccount" id="V49-J9-HDn"/>
                     </connections>
                 </viewController>

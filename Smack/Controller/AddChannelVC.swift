@@ -9,7 +9,7 @@
 import UIKit
 
 class AddChannelVC: UIViewController {
-
+//Outlets
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var channelDesc: UITextField!
     @IBOutlet weak var channelName: UITextField!
@@ -20,6 +20,13 @@ class AddChannelVC: UIViewController {
     }
 
     @IBAction func createChannelPressed(_ sender: Any) {
+        guard let name = channelName.text,channelName.text != "" else {return}
+        guard let desc = channelDesc.text else {return}
+        SocketService.instance.addChannel(name: name, description: desc) { (success) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
         
     }
     

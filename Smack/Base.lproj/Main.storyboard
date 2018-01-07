@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
@@ -45,10 +48,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-8V-FMb" customClass="GradientView" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqE-9S-FO7">
-                                        <rect key="frame" x="12" y="64" width="28" height="20"/>
+                                        <rect key="frame" x="12" y="58" width="28" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="GOv-Xz-tPs"/>
                                             <constraint firstAttribute="width" constant="28" id="mWq-re-qDL"/>
@@ -56,7 +59,7 @@
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKE-E9-c8h">
-                                        <rect key="frame" x="159.66666666666666" y="64.666666666666671" width="56" height="20"/>
+                                        <rect key="frame" x="159.66666666666666" y="58.666666666666657" width="56" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,27 +68,52 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="cqE-9S-FO7" secondAttribute="bottom" constant="12" id="9nh-C1-Pqa"/>
-                                    <constraint firstAttribute="height" constant="96" id="KZl-If-wDV"/>
+                                    <constraint firstAttribute="height" constant="90" id="KZl-If-wDV"/>
                                     <constraint firstItem="EKE-E9-c8h" firstAttribute="centerX" secondItem="Rr3-8V-FMb" secondAttribute="centerX" id="eeg-Ww-E3f"/>
                                     <constraint firstItem="cqE-9S-FO7" firstAttribute="leading" secondItem="Rr3-8V-FMb" secondAttribute="leading" constant="12" id="m7c-A4-bp1"/>
                                     <constraint firstItem="EKE-E9-c8h" firstAttribute="centerY" secondItem="cqE-9S-FO7" secondAttribute="centerY" id="nEm-vK-YDY"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sly-vq-Qid">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gpd-nC-7RZ"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ey-KJ-JZY">
+                                <rect key="frame" x="335" y="728" width="30" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fc4-as-3Jl"/>
+                                </constraints>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="messageSendBtnPressed:" destination="xsl-Eb-3LJ" eventType="touchUpInside" id="Ahg-O5-JSG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Sly-vq-Qid" firstAttribute="leading" secondItem="zQ3-ti-MAG" secondAttribute="leading" id="3Nb-sc-ioM"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="top" secondItem="HIk-Vk-pZ6" secondAttribute="top" id="BtM-YM-yii"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="leading" secondItem="HIk-Vk-pZ6" secondAttribute="leading" id="Iz9-VY-otT"/>
+                            <constraint firstItem="Sly-vq-Qid" firstAttribute="bottom" secondItem="zQ3-ti-MAG" secondAttribute="bottom" id="MwC-1k-dIU"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="leading" secondItem="zQ3-ti-MAG" secondAttribute="leading" id="QVl-Iv-nan"/>
+                            <constraint firstItem="zQ3-ti-MAG" firstAttribute="trailing" secondItem="7Ey-KJ-JZY" secondAttribute="trailing" constant="10" id="SQT-wP-u22"/>
                             <constraint firstAttribute="trailing" secondItem="Rr3-8V-FMb" secondAttribute="trailing" id="eQ9-Rv-vji"/>
+                            <constraint firstItem="zQ3-ti-MAG" firstAttribute="trailing" secondItem="Sly-vq-Qid" secondAttribute="trailing" id="eV4-uA-7ji"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="trailing" secondItem="zQ3-ti-MAG" secondAttribute="trailing" id="ei1-9R-xOC"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="top" secondItem="HIk-Vk-pZ6" secondAttribute="top" id="ghc-F4-6iQ"/>
+                            <constraint firstItem="7Ey-KJ-JZY" firstAttribute="centerY" secondItem="Sly-vq-Qid" secondAttribute="centerY" id="vUD-ib-VZq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zQ3-ti-MAG"/>
                     </view>
                     <connections>
                         <outlet property="channelNameLbl" destination="EKE-E9-c8h" id="C0F-Bu-BV1"/>
                         <outlet property="menuBtn" destination="cqE-9S-FO7" id="fmn-HT-BnM"/>
+                        <outlet property="messageBoxTxt" destination="Sly-vq-Qid" id="R11-cD-iPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOP-sP-NAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,6 +636,7 @@
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>

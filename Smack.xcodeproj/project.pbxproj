@@ -19,6 +19,7 @@
 		E937B4CC20016425008F262F /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937B4CB20016425008F262F /* ChannelCell.swift */; };
 		E937B4D320016DB4008F262F /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937B4D120016DB4008F262F /* AddChannelVC.swift */; };
 		E937B4D420016DB4008F262F /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E937B4D220016DB4008F262F /* AddChannelVC.xib */; };
+		E940EB6E2002A93600DF64ED /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940EB6D2002A93500DF64ED /* KeyboardBoundView.swift */; };
 		E963D3B82002120C00CB96F8 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E963D3B72002120C00CB96F8 /* SocketService.swift */; };
 		E96DAF661FF4A5D100D9AD8D /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DAF651FF4A5D100D9AD8D /* ChannelVC.swift */; };
 		E96DAF681FF4A5E600D9AD8D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DAF671FF4A5E600D9AD8D /* ChatVC.swift */; };
@@ -50,6 +51,7 @@
 		E937B4CB20016425008F262F /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		E937B4D120016DB4008F262F /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		E937B4D220016DB4008F262F /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		E940EB6D2002A93500DF64ED /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		E957D4C51B1E938E20A33676 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		E963D3B72002120C00CB96F8 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		E96DAF651FF4A5D100D9AD8D /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				E9B6F2131FFB6973005F4F41 /* AvatarCell.swift */,
 				E90385081FFC873000664804 /* CircleImage.swift */,
 				E937B4CB20016425008F262F /* ChannelCell.swift */,
+				E940EB6D2002A93500DF64ED /* KeyboardBoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E940EB6E2002A93600DF64ED /* KeyboardBoundView.swift in Sources */,
 				E963D3B82002120C00CB96F8 /* SocketService.swift in Sources */,
 				E9A529062000B3F500A4E96C /* ProfileVC.swift in Sources */,
 				E937B4CC20016425008F262F /* ChannelCell.swift in Sources */,

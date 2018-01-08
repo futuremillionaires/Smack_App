@@ -22,7 +22,7 @@ class SocketService: NSObject {
     }
     
     func terminateConnection() {
-     manager.defaultSocket.disconnect()
+        manager.defaultSocket.disconnect()
     }
     
     func addChannel(name:String, description: String , completion: @escaping CompletionHandler) {

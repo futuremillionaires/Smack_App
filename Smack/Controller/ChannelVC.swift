@@ -19,7 +19,7 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-      self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 85
+        self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 85
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         SocketService.instance.getChannel { (success) in
@@ -33,7 +33,7 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             let profile = ProfileVC()
             profile.modalPresentationStyle = .custom
             present(profile, animated: true, completion: nil)
-
+            
         }else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
@@ -41,7 +41,7 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
     }
-
+    
     
     @objc func userDataDidChanged(_ notif: Notification){
         setupUserInfo()

@@ -48,12 +48,12 @@ class MessageService {
                 if let json = try JSON(data: data).array {
                     for item in json {
                         let messageBody = item["messageBody"].stringValue
-                         let userName = item["userName"].stringValue
-                         let userAvatar = item["userAvatar"].stringValue
-                         let userAvatarColor = item["userAvatarColor"].stringValue
-                         let channelId = item["channelId"].stringValue
-                         let id = item["_id"].stringValue
-                         let timeStamp = item["timeStamp"].stringValue
+                        let userName = item["userName"].stringValue
+                        let userAvatar = item["userAvatar"].stringValue
+                        let userAvatarColor = item["userAvatarColor"].stringValue
+                        let channelId = item["channelId"].stringValue
+                        let id = item["_id"].stringValue
+                        let timeStamp = item["timeStamp"].stringValue
                         
                         let message = Message(message: messageBody, id: id, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, channelId: channelId, timeStamp: timeStamp)
                         self.messages.append(message)
@@ -65,16 +65,16 @@ class MessageService {
             }
             completion(true)
         }
-  
+        
     }
-
+    
     func clearMessage(){
         messages.removeAll()
     }
     func clearChannel() {
         channels.removeAll()
     }
-   
+    
     
     
     

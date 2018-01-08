@@ -15,7 +15,6 @@ class ChannelCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
@@ -24,11 +23,8 @@ class ChannelCell: UITableViewCell {
             self.layer.backgroundColor = UIColor.clear.cgColor
         }
     }
-    
     func configureCell(channel: Channel){
         let title = channel.name ?? ""
         channelName.text = "#\(title)"
     }
-    
-
 }

@@ -27,7 +27,6 @@ class AvatarCell: UICollectionViewCell {
             avatarImage.image = UIImage(named:"light\(index)")
             self.layer.backgroundColor = UIColor.gray.cgColor
         }
-        
     }
     func setUpView(){
         self.layer.backgroundColor = UIColor.lightGray.cgColor

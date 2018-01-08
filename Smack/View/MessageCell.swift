@@ -18,7 +18,6 @@ class MessageCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
     func configureCell(message: Message){
         messageBodyLbl.text = message.message
         userNameLbl.text = message.userName

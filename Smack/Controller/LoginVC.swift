@@ -19,7 +19,6 @@ class LoginVC: UIViewController {
         
     }
     
-    
     @IBAction func loginBtnPressed(_ sender: Any) {
         spinner.isHidden = false
         spinner.startAnimating()
@@ -33,17 +32,12 @@ class LoginVC: UIViewController {
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
-//                        print(AuthServices.instance.userEmail)
                     }
                 })
             }
         }
-        
-        
     }
-    
-    
-    
+
     @IBAction func closePressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -55,11 +49,6 @@ class LoginVC: UIViewController {
         userNameTxt.attributedPlaceholder = NSAttributedString(string: "UserName", attributes: [NSAttributedStringKey.foregroundColor:smackPurplePlaceholder])
         
         passwordTxt.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor:smackPurplePlaceholder])
-        
-        
-        
-        
-        
     }
     
     

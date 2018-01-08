@@ -9,17 +9,20 @@
 import UIKit
 
 class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageBoxTxt: UITextField!
     @IBOutlet weak var channelNameLbl: UILabel!
+    @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
+    //Variable
+    var isTyping = false
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
-        
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        sendBtn.isHidden = true
         super.viewDidLoad()
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
@@ -29,16 +32,22 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        SocketService.instance.getMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
         
         if AuthServices.instance.isLoggedIn {
             AuthServices.instance.findUserByEmail(completion: { (success) in
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
-        
-        
     }
-    
     
     @objc func userDataDidChanged(_ notif: Notification){
         
@@ -47,6 +56,18 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }else {
             channelNameLbl.text = "Please Login"
         }
+    }
+    @IBAction func messageBoxClicked(_ sender: Any) {
+        if messageBoxTxt.text == "" {
+            isTyping = false
+            sendBtn.isHidden = true
+        }else {
+            if isTyping == false {
+                sendBtn.isHidden = false
+            }
+            isTyping = true
+        }
+        
     }
     
     @IBAction func messageSendBtnPressed(_ sender: Any) {
@@ -83,6 +104,7 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                     self.updateWithChannel()
                 }else{
                     self.channelNameLbl.text = "NO CHANNEL"
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -97,8 +119,7 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
         }
     }
-    
-    
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell  = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
             let message = MessageService.instance.messages[indexPath.row]
@@ -115,12 +136,5 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }

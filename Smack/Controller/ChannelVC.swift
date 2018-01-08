@@ -9,7 +9,8 @@
 import UIKit
 
 class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+   
+    //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImg: CircleImage!
     @IBOutlet weak var loginBtn: UIButton!

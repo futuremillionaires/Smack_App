@@ -29,7 +29,6 @@ class SocketService: NSObject {
         manager.defaultSocket.emit("newChannel", name,description)
         completion(true)
     }
-    
     func getChannel(completion : @escaping CompletionHandler) {
         manager.defaultSocket.on("channelCreated") { (dataArry, ack) in
             guard let name = dataArry[0] as? String else {return}
@@ -40,7 +39,6 @@ class SocketService: NSObject {
             completion(true)
         }
     }
-    
     func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler){
         let user = UserDataService.instance
         manager.defaultSocket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
@@ -56,7 +54,6 @@ class SocketService: NSObject {
             guard let userAvatarColor = dataArry[5] as? String else {return}
             guard let userId = dataArry[6] as? String else {return}
             guard let timeStamp = dataArry[7] as? String else {return}
-            
             if channelId == MessageService.instance.selectedChannel?.id && AuthServices.instance.isLoggedIn {
                 let newMessage = Message(message: messagebody, id: userId, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, channelId: channelId, timeStamp: timeStamp)
                 MessageService.instance.messages.append(newMessage)
@@ -64,20 +61,13 @@ class SocketService: NSObject {
             }else {
                 completion(false)
             }
-            
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }
+    func getTypingUser(_ completionHandler: @escaping (_ typingUsers: [String:String]) -> Void) {
+        manager.defaultSocket.on("userTypingUpdate") { (dataArry, ack) in
+            guard let typingUser = dataArry[0] as? [String:String] else {return}
+            completionHandler(typingUser)
+        }
     }
     
     

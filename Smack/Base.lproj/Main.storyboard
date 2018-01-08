@@ -14,6 +14,7 @@
         <array key="Avenir.ttc">
             <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
         </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
@@ -118,19 +119,18 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="12:33 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48k-V6-fIb">
                                                     <rect key="frame" x="153" y="12.333333333333336" width="60" height="20"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" text="RajuD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf9-aY-gdb">
                                                     <rect key="frame" x="83" y="11" width="45" height="22"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MessageBody" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-yw-qTs">
                                                     <rect key="frame" x="83" y="40" width="269" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -156,6 +156,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-8Y-AnT">
+                                <rect key="frame" x="8" y="722" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -168,6 +174,8 @@
                             <constraint firstItem="Sly-vq-Qid" firstAttribute="bottom" secondItem="zQ3-ti-MAG" secondAttribute="bottom" id="MwC-1k-dIU"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="leading" secondItem="zQ3-ti-MAG" secondAttribute="leading" id="QVl-Iv-nan"/>
                             <constraint firstItem="zQ3-ti-MAG" firstAttribute="trailing" secondItem="7Ey-KJ-JZY" secondAttribute="trailing" constant="10" id="SQT-wP-u22"/>
+                            <constraint firstItem="Sly-vq-Qid" firstAttribute="top" secondItem="hDz-8Y-AnT" secondAttribute="bottom" constant="6" id="b9K-lf-Ivp"/>
+                            <constraint firstItem="hDz-8Y-AnT" firstAttribute="leading" secondItem="zQ3-ti-MAG" secondAttribute="leading" constant="8" id="bD9-0N-8FG"/>
                             <constraint firstAttribute="trailing" secondItem="Rr3-8V-FMb" secondAttribute="trailing" id="eQ9-Rv-vji"/>
                             <constraint firstItem="zQ3-ti-MAG" firstAttribute="trailing" secondItem="Sly-vq-Qid" secondAttribute="trailing" id="eV4-uA-7ji"/>
                             <constraint firstItem="Rr3-8V-FMb" firstAttribute="trailing" secondItem="zQ3-ti-MAG" secondAttribute="trailing" id="ei1-9R-xOC"/>
@@ -183,6 +191,7 @@
                         <outlet property="messageBoxTxt" destination="Sly-vq-Qid" id="R11-cD-iPm"/>
                         <outlet property="sendBtn" destination="7Ey-KJ-JZY" id="tfj-1M-mJL"/>
                         <outlet property="tableView" destination="KYl-c6-yh0" id="Zi2-CD-jH5"/>
+                        <outlet property="typingUserLbl" destination="hDz-8Y-AnT" id="o85-LC-GKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOP-sP-NAH" userLabel="First Responder" sceneMemberID="firstResponder"/>

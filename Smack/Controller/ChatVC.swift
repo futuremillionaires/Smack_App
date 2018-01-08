@@ -11,6 +11,7 @@ import UIKit
 class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var typingUserLbl: UILabel!
     @IBOutlet weak var messageBoxTxt: UITextField!
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var sendBtn: UIButton!
@@ -41,14 +42,36 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 }
             }
         }
-        
+        SocketService.instance.getTypingUser { (typingUser) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            var name = ""
+            var numberOfUser = 0
+            for (typingUser,channel) in typingUser {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if name == "" {
+                        name = typingUser
+                    }else {
+                        name = "\(name),\(typingUser)"
+                    }
+                    numberOfUser += 1
+                }
+            }
+            if numberOfUser > 0 && AuthServices.instance.isLoggedIn == true {
+                var verb = "is"
+                if numberOfUser > 1 {
+                    verb = "are"
+                }
+                self.typingUserLbl.text = "\(name) \(verb) typing a message..."
+            }else {
+                self.typingUserLbl.text = ""
+            }
+        }
         if AuthServices.instance.isLoggedIn {
             AuthServices.instance.findUserByEmail(completion: { (success) in
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
     }
-    
     @objc func userDataDidChanged(_ notif: Notification){
         
         if AuthServices.instance.isLoggedIn {
@@ -58,12 +81,15 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     @IBAction func messageBoxClicked(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         if messageBoxTxt.text == "" {
             isTyping = false
             sendBtn.isHidden = true
+            SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name,channelId)
         }else {
             if isTyping == false {
                 sendBtn.isHidden = false
+                SocketService.instance.manager.defaultSocket.emit("startType", UserDataService.instance.name,channelId)
             }
             isTyping = true
         }
@@ -78,6 +104,7 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 if success {
                     self.messageBoxTxt.text = ""
                     self.messageBoxTxt.resignFirstResponder()
+                    SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name,channelId)
                 }
             })
         }
@@ -109,8 +136,7 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
         }
     }
-    
-    
+
     func getMessage() {
         guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         MessageService.instance.findAllMessageForChannel(channelId: channelId) { (success) in

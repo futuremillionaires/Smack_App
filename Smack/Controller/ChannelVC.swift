@@ -35,9 +35,6 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
-        
-        
-        
     }
     @IBAction func loginBtnpressed(_ sender: Any) {
         if AuthServices.instance.isLoggedIn {
@@ -52,7 +49,6 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
     }
-    
     
     @objc func userDataDidChanged(_ notif: Notification){
         setupUserInfo()
@@ -110,13 +106,4 @@ class ChannelVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         self.revealViewController().revealToggle(animated: true)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

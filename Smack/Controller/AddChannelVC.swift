@@ -13,12 +13,12 @@ class AddChannelVC: UIViewController {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var channelDesc: UITextField!
     @IBOutlet weak var channelName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         // Do any additional setup after loading the view.
     }
-
     @IBAction func createChannelPressed(_ sender: Any) {
         guard let name = channelName.text,channelName.text != "" else {return}
         guard let desc = channelDesc.text else {return}
@@ -36,10 +36,8 @@ class AddChannelVC: UIViewController {
         bgView.addGestureRecognizer(tap)
         channelName.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
         channelDesc.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
-        
     }
     @objc func closeTouch(_ recognizer:UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
-
 }

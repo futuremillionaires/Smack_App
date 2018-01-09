@@ -9,18 +9,17 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
+//Outlet
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var profileImg: CircleImage!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
         // Do any additional setup after loading the view.
     }
-
     @IBAction func closeModalPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -34,12 +33,9 @@ class ProfileVC: UIViewController {
         userEmail.text = UserDataService.instance.email
         profileImg.image = UIImage(named: UserDataService.instance.avatarName)
         profileImg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
-        
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)
-        
     }
-    
     @objc func closeTap(_ recognizer:UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
     }

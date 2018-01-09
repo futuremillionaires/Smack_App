@@ -53,15 +53,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqE-9S-FO7">
-                                        <rect key="frame" x="12" y="58" width="28" height="20"/>
+                                        <rect key="frame" x="12" y="58" width="26" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="GOv-Xz-tPs"/>
-                                            <constraint firstAttribute="width" constant="28" id="mWq-re-qDL"/>
+                                            <constraint firstAttribute="width" constant="26" id="mWq-re-qDL"/>
                                         </constraints>
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKE-E9-c8h">
-                                        <rect key="frame" x="162" y="57.000000000000007" width="51.333333333333343" height="23.333333333333336"/>
+                                        <rect key="frame" x="162" y="56.999999999999993" width="51.666666666666657" height="23.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="12:33 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48k-V6-fIb">
-                                                    <rect key="frame" x="153" y="12.333333333333336" width="60" height="20"/>
+                                                    <rect key="frame" x="143" y="12.666666666666664" width="60" height="20"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hJz-yw-qTs" secondAttribute="trailing" constant="8" id="AZh-NI-pGS"/>
-                                                <constraint firstItem="48k-V6-fIb" firstAttribute="leading" secondItem="Lf9-aY-gdb" secondAttribute="trailing" constant="25" id="PWw-rV-JhP"/>
+                                                <constraint firstItem="48k-V6-fIb" firstAttribute="leading" secondItem="Lf9-aY-gdb" secondAttribute="trailing" constant="15" id="PWw-rV-JhP"/>
                                                 <constraint firstItem="smO-q4-btE" firstAttribute="top" secondItem="sBG-ow-Lfn" secondAttribute="topMargin" id="TrJ-rf-KSk"/>
                                                 <constraint firstItem="smO-q4-btE" firstAttribute="leading" secondItem="sBG-ow-Lfn" secondAttribute="leadingMargin" id="UfU-nx-O9Y"/>
                                                 <constraint firstItem="hJz-yw-qTs" firstAttribute="leading" secondItem="smO-q4-btE" secondAttribute="trailing" constant="8" id="dqZ-DX-Ke8"/>
@@ -452,13 +452,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1j-fE-rzz">
-                                <rect key="frame" x="99.333333333333329" y="124" width="175.66666666666669" height="24"/>
+                                <rect key="frame" x="99.666666666666671" y="124" width="175.66666666666663" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-gX-ut2" customClass="RoundedCorner" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="63" y="713" width="250" height="50"/>
+                                <rect key="frame" x="62.666666666666657" y="713" width="249.99999999999997" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="n1E-2e-hNp"/>
@@ -505,7 +505,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Uka-g1-sAQ">
-                                <rect key="frame" x="63" y="188" width="250" height="139"/>
+                                <rect key="frame" x="62.666666666666657" y="188" width="249.99999999999997" height="139"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-6b-xNF">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
@@ -558,7 +558,7 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="WR5-qU-Jvn" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="137" y="377" width="100" height="100"/>
+                                <rect key="frame" x="137.66666666666666" y="377" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="PQt-HX-zbK"/>
                                     <constraint firstAttribute="height" constant="100" id="ZW6-jf-Wox"/>

@@ -10,7 +10,6 @@ import UIKit
 
 class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 // Outlets
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     //Variables
@@ -53,7 +52,6 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         }
     self.dismiss(animated: true, completion: nil)
     }
-
     @IBAction func segmentControlChanged(_ sender: Any) {
         if segmentControl.selectedSegmentIndex == 0 {
             avatarType = .dark
@@ -65,5 +63,4 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
 }

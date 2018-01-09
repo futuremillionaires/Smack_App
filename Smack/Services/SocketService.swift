@@ -15,16 +15,14 @@ class SocketService: NSObject {
     override init() {
         super.init()
     }
+    // Sockets
     let manager = SocketManager(socketURL: URL(string: BASE_URL)!,config:[.log(true),.compress])
-    
     func establishConnection() {
         manager.defaultSocket.connect()
     }
-    
     func terminateConnection() {
         manager.defaultSocket.disconnect()
     }
-    
     func addChannel(name:String, description: String , completion: @escaping CompletionHandler) {
         manager.defaultSocket.emit("newChannel", name,description)
         completion(true)
@@ -45,7 +43,6 @@ class SocketService: NSObject {
         completion(true)
     }
     func getMessage(completion: @escaping (_ newMessage:Message)-> Void){
-        
         manager.defaultSocket.on("messageCreated") { (dataArry, ack) in
             guard let messagebody = dataArry[0] as? String else {return}
             guard let channelId = dataArry[2] as? String else {return}
@@ -57,7 +54,6 @@ class SocketService: NSObject {
            
             let newMessage = Message(message: messagebody, id: userId, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, channelId: channelId, timeStamp: timeStamp)
             completion(newMessage)
-            
         }
     }
     func getTypingUser(_ completionHandler: @escaping (_ typingUsers: [String:String]) -> Void) {
@@ -66,8 +62,4 @@ class SocketService: NSObject {
             completionHandler(typingUser)
         }
     }
-    
-    
-    
-    
 }
